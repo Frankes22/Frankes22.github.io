@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a0321;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.btn-neon{
+    position: relative;
+    display: inline-block;
+    padding: 30px 45px;
+    color: white;
+    letter-spacing: 4px;
+    font-size: 24px;
+    text-decoration: none;
+    overflow:hidden;
+    transition: 0.2s;
+    border: #1a0321;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #ffffff;
+
+}
+
+.btn-neon:hover{
+    background: #b33232;
+    box-shadow: 0 0 10px #b33232, 0 0 40px
+    #b33232, 0 0 80px #b33232;
+    transition-delay: 0.4s;
+}
+
+
+
+
+

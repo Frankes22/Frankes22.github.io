@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseña</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: linear-gradient(-225deg, #D4FFEC 0%, #57F2CC 48%, #4596FB 100%);
+    }
+    .container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 150px #4596FB;
+    }
+    #password {
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .keypad button {
+        font-size: 20px;
+        padding: 15px;
+        background-color: #ddd;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .keypad button:hover {
+        background-color: #ccc;
+    }
+    .action-buttons {
+        margin-top: 10px;
+    }
+    .action-buttons button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .action-buttons button:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Introduce la Contraseña</h2>
+    <input type="text" id="password" readonly>
+    <div class="keypad">
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button onclick="clearPassword()">C</button>
+        <button onclick="addNumber(0)">0</button>
+        <button onclick="verificarPassword()">✔️</button>
+    </div>
+    <p id="mensaje" class="error"></p>
+</div>
+
+<script>
+    const passwordCorrecta = '1914'; // Cambia esto por la contraseña deseada
+    const passwordInput = document.getElementById('password');
+    const mensaje = document.getElementById('mensaje');
+
+    function addNumber(number) {
+        passwordInput.value += number;
+        mensaje.textContent = ''; // Limpiar mensaje de error al agregar número
+    }
+
+    function clearPassword() {
+        passwordInput.value = '';
+        mensaje.textContent = ''; // Limpiar mensaje de error al limpiar
+    }
+
+    function verificarPassword() {
+        if (passwordInput.value === passwordCorrecta) {
+            window.location.href = 'configs.html'; // Cambia esto por la URL de tu archivo HTML de destino
+        } else {
+            mensaje.textContent = 'La contraseña es incorrecta';
+            clearPassword(); // Limpiar la entrada si la contraseña es incorrecta
+        }
+    }
+</script>
+</body>
+</html>
